@@ -10,6 +10,17 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 > backward-incompatible ways until a 1.0 release. Pre-1.0 versions do not carry
 > the stability guarantees of [Semantic Versioning](https://semver.org/).
 
+## [0.7.0] - 2026-06-16
+
+### Added
+
+- Inclusion-certificate companion (`spec/inclusion-certificate.md`): an informative document specifying a portable, standalone-verifiable certificate that composes the existing top-level Merkle list commitment, the RFC 9162 inclusion proof, and the COSE verifiable-data-structure encoding the normative specification already defines. It introduces no new on-chain field, metadata label, or algorithm identifier; a conforming verifier needs nothing from it to verify an on-chain record.
+- Conformance vector for the inclusion certificate (`conformance/certificate/inclusion-certificate-kat.json`): byte-pinned RFC 9162 root, bare IETF inclusion-proof CBOR, and the COSE / RFC 9162-aligned proof map, reproduced byte-for-byte by the TypeScript, Python, and Rust reference implementations.
+
+### Changed
+
+- The existing `rfc9162-sha256` Merkle root, inclusion-proof, and leaves-list known-answer vectors are now loaded directly by the cross-language conformance tests and are recorded as byte-identical in the parity matrix. No change to the specification text, registries, or wire format.
+
 ## [0.6.0] - 2026-06-13
 
 ### Added

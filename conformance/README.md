@@ -31,6 +31,8 @@ primitives:
   per-wallet CIP-30 shape-vectors.
 - **Merkle** — `rfc9162-sha256` root/inclusion-proof construction and the
   canonical-CBOR leaves-list document.
+- **Inclusion certificate** — the `label-309-inclusion-certificate-v1` root,
+  bare IETF inclusion-proof CBOR, and COSE / RFC 9162-aligned proof map.
 - **Seed → key derivation** — seed to Ed25519 / X25519 / X-Wing keys, the
   bech32 recipient encodings, and the checksummed `l309-seed` identity-seed
   string encoding.
@@ -182,6 +184,7 @@ byte-identical across regenerations.
 | `cose/`          | `COSE_Sign1` build/verify, `Sig_structure`, `to_sign` verbatim, attached→detached transform    |
 | `wallet-cose/`   | CIP-30 per-wallet shape-vectors (valid + rejection)                                            |
 | `merkle/`        | `rfc9162-sha256` root/proof KATs + leaves-list document                                        |
+| `certificate/`   | `label-309-inclusion-certificate-v1` root + IETF proof + COSE proof KAT                        |
 | `seed-derive/`   | seed → Ed25519 / X25519 / X-Wing keys + recipient + identity-seed encodings                    |
 | `sealed-poe/`    | multi-recipient wrap/unwrap (classical + hybrid) + negatives                                   |
 | `poe-record/`    | maximal + mixed-signature positive records (full wire surface)                                 |

@@ -1,0 +1,43 @@
+{
+  "version": 1,
+  "primitive": "label-309-inclusion-certificate-v1",
+  "source": "Label 309 cross-SDK reconciliation",
+  "description": "Known-answer vector for the Label 309 inclusion certificate (the informative companion that composes the normative rfc9162-sha256 list commitment, the RFC 9162 inclusion proof, and the COSE verifiable-data-structure encoding). It pins the byte-exact interoperability surface every conforming implementation MUST reproduce from the same inputs: the tree root, the bare IETF inclusion proof as a `bstr .cbor` byte string (the CBOR byte string whose contents encode the array [tree_size, leaf_index, inclusion_path], extractable and verifiable on its own), and the COSE / RFC 9162-aligned inclusion-certificate-proof CBOR map (which embeds that same `bstr .cbor`). The JSON certificate form is field/value-parity only (a serializer's whitespace and number/key formatting vary across languages) and is therefore not byte-pinned here; the CBOR proof is the byte-identical anchor. Inputs: a deterministic 4-leaf tree where leaf_i = SHA-256(single byte i); a fixed Cardano mainnet anchor; the certified target is the leaf at index 2 carrying the optional leaf_alg \"sha2-256\".",
+  "tree_alg": "rfc9162-sha256",
+  "vds": 1,
+  "vectors": [
+    {
+      "name": "4-leaf-index-2-sha2-256",
+      "input": {
+        "leaves": [
+          "6e340b9cffb37a989ca544e6bb780a2c78901d3fb33738768511a30617afa01d",
+          "4bf5122f344554c53bde2ebb8cd2b7e3d1600ad631c385a5d7cce23c7785459a",
+          "dbc1b4c900ffe48d575b5da5c638040125f65db0fe3e24494b76ea986457d986",
+          "084fed08b978af4d7d196a7446a86b58009e636b611db16211b65a9aadff29c5"
+        ],
+        "tree_size": 4,
+        "anchor": {
+          "chain": "cardano",
+          "network": "mainnet",
+          "tx_hash": "abcdef0123456789abcdef0123456789abcdef0123456789abcdef0123456789",
+          "metadata_label": 309,
+          "block_time": 1718539200
+        },
+        "target": {
+          "index": 2,
+          "leaf_alg": "sha2-256"
+        }
+      },
+      "expected": {
+        "root": "0dcc2b645c00dfa2338e1c7ac2c4b570beda5a476d58836e55e28bde55e6bee1",
+        "leaf": "dbc1b4c900ffe48d575b5da5c638040125f65db0fe3e24494b76ea986457d986",
+        "inclusion_path": [
+          "36e4970e7c84e559ed7290304c3c0672289a6918e7746d48397b0e122db7748f",
+          "604d540f09268b91672ab011394d5266ccd7d4484d0d109411a55848126a1b2c"
+        ],
+        "ietf_inclusion_proof_cbor_hex": "584883040282582036e4970e7c84e559ed7290304c3c0672289a6918e7746d48397b0e122db7748f5820604d540f09268b91672ab011394d5266ccd7d4484d0d109411a55848126a1b2c",
+        "cose_inclusion_proof_cbor_hex": "a66376647301646c6561665820dbc1b4c900ffe48d575b5da5c638040125f65db0fe3e24494b76ea986457d98664726f6f7458200dcc2b645c00dfa2338e1c7ac2c4b570beda5a476d58836e55e28bde55e6bee166616e63686f72a465636861696e6763617264616e6f676e6574776f726b676d61696e6e65746774785f686173685820abcdef0123456789abcdef0123456789abcdef0123456789abcdef01234567896e6d657461646174615f6c6162656c190135686c6561665f616c6768736861322d3235366f696e636c7573696f6e5f70726f6f66584883040282582036e4970e7c84e559ed7290304c3c0672289a6918e7746d48397b0e122db7748f5820604d540f09268b91672ab011394d5266ccd7d4484d0d109411a55848126a1b2c"
+      }
+    }
+  ]
+}

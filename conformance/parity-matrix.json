@@ -342,6 +342,15 @@
       "notes": "Companion leaves-list schema violations; every implementation MUST reject the same byte sequences with the same emitted error code."
     },
     {
+      "vector_class": "Inclusion certificate (label-309-inclusion-certificate-v1) — root + IETF proof + COSE proof KAT",
+      "area": "certificate",
+      "files": [
+        "inclusion-certificate-kat.json"
+      ],
+      "kind": "kat",
+      "notes": "From a deterministic 4-leaf tree (leaf_i = SHA-256(byte i)) and a fixed Cardano anchor, certifying the leaf at index 2: the rfc9162-sha256 root, the bare IETF inclusion-proof CBOR ([tree_size, leaf_index, inclusion_path]), and the COSE / RFC 9162-aligned inclusion-certificate-proof CBOR map MUST all be byte-identical across implementations. The JSON certificate form is field/value-parity only (writer-dependent whitespace and key formatting) and is intentionally not byte-pinned here; the CBOR proof is the byte-exact anchor."
+    },
+    {
       "vector_class": "Structural validator — negative / positive / role-dependent / resource-bound corpora",
       "area": "validator",
       "files": [
