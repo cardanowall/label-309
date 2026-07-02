@@ -10,6 +10,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 > backward-incompatible ways until a 1.0 release. Pre-1.0 versions do not carry
 > the stability guarantees of [Semantic Versioning](https://semver.org/).
 
+## [0.8.0] - 2026-07-02
+
+### Changed
+
+- Version alignment with the coordinated 0.8.0 release; no changes to the specification, registries, or conformance vectors.
+
 ## [0.7.0] - 2026-06-16
 
 ### Added
