@@ -10,6 +10,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 > backward-incompatible ways until a 1.0 release. Pre-1.0 versions do not carry
 > the stability guarantees of [Semantic Versioning](https://semver.org/).
 
+## [0.10.0] - 2026-07-05
+
+### Changed
+
+- `spec/inclusion-certificate.md` §4: the certificate's `verification` object gains two OPTIONAL informative members, specified vendor-neutrally. `independent_tools` names independent tooling a verifier can use to recheck the claim; `requires_issuer_trust` states whether validating the claim requires trusting the issuing service — `false` for a public-blockchain anchor, where any party recomputes the proof from the certificate file and a public explorer. Both are informative: trust is established by the §6 recomputation, never by these fields. Existing certificates stay valid, since verifiers already tolerate unknown members.
+
 ## [0.9.0] - 2026-07-03
 
 ### Changed

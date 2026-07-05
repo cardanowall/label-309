@@ -153,6 +153,8 @@ leaves-list.
   "claim": "Each listed hash was included in a Merkle tree whose root was published on the Cardano blockchain in the referenced transaction under metadata label 309; therefore each hash provably existed on or before the stated block time.",
   "verification": {
     "method": "RFC 9162 (Certificate Transparency) SHA-256 inclusion proof. For each item, recompute the Merkle root from leaf+index+tree_size+proof and compare to merkle.root; then confirm merkle.root equals the merkle[].root in the Label 309 record of anchor.tx_hash on any public Cardano explorer.",
+    "independent_tools": [ "…", "…" ],              ; OPTIONAL independent re-verification tools
+    "requires_issuer_trust": false,                 ; OPTIONAL; false for a public-chain anchor
     "time_asserted_by": "Cardano blockchain (block time), via public explorers"
   }
 }
@@ -191,6 +193,19 @@ Field rules:
 - `claim` / `verification` — REQUIRED human-readable framing. The wording **MUST
   NOT** overclaim: it **MUST** attribute the time to the Cardano blockchain and
   **MUST NOT** describe the certificate as a "qualified" timestamp.
+- `verification.independent_tools` — OPTIONAL array of strings. Names or
+  identifiers of independent tools with which a verifier can recheck the
+  certificate's claim (for example a command-line verifier, or any generic
+  RFC 9162 / COSE verifiable-data-structure implementation). The list is
+  informative: it is neither exhaustive nor authoritative, and a verifier
+  **MAY** use any conforming implementation of the algorithm in §6.
+- `verification.requires_issuer_trust` — OPTIONAL boolean. Whether validating
+  the certificate's claim requires trusting the issuing service. For a
+  certificate over a public-blockchain inclusion proof this is `false`: any
+  party recomputes the proof from the certificate file and confirms the anchor
+  on a public explorer (§6), with no input from the producer. The field is
+  informative; trust is established by the recomputation of §6, never by this
+  assertion.
 
 The JSON **SHOULD** be emitted with stable key order (as shown above) and 2-space
 indentation for the human-readable form; a compact single-line form is also
