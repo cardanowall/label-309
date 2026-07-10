@@ -10,6 +10,12 @@ The format is based on [Keep a Changelog](https://keepachangelog.com/en/1.1.0/).
 > backward-incompatible ways until a 1.0 release. Pre-1.0 versions do not carry
 > the stability guarantees of [Semantic Versioning](https://semver.org/).
 
+> **CIP status.** On 2026-07-08 the specification was accepted into the Cardano
+> CIP repository as
+> [CIP-0190](https://github.com/cardano-foundation/CIPs/tree/master/CIP-0190)
+> (CIP lifecycle status: Proposed). Acceptance records the milestone; it is not a
+> release and does not change the wire format, so it carries no version bump.
+
 ## [0.10.0] - 2026-07-05
 
 ### Changed

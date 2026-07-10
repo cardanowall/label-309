@@ -13,16 +13,17 @@ trusting the publisher, their domain, or any server.
 [`label-309.md`](./label-309.md) is structured against the
 [CIP-0001 template](https://github.com/cardano-foundation/CIPs/blob/master/CIP-0001/README.md)
 (preamble header block, Abstract, Motivation, Specification, Rationale, Path to
-Active, Copyright) so it can be submitted to `cardano-foundation/CIPs` with
-minimal editorial change.
+Active, Copyright), and was submitted to `cardano-foundation/CIPs` and accepted
+as [CIP-0190](https://github.com/cardano-foundation/CIPs/tree/master/CIP-0190).
 
 ## Status
 
 **Working draft — authoring in progress.**
 
-This is a pre-1.0 working draft. It has not yet been submitted to the formal
-Cardano CIP process. This repository is the reference home for the standard
-while the text is finalized for submission.
+This is a pre-1.0 working draft. It has been accepted into the Cardano CIP
+repository as [CIP-0190](https://github.com/cardano-foundation/CIPs/tree/master/CIP-0190)
+(CIP lifecycle status: Proposed). This repository is the reference home for the
+standard.
 
 ## Machine-readable companions
 

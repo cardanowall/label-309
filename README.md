@@ -13,11 +13,11 @@ registries, and the cross-implementation conformance vectors.
 
 ## Status
 
-**Working draft — pre-1.0.** Label 309 has **not** yet been submitted to the
-formal Cardano CIP process. This repository serves as the reference home for the
-standard while it is finalized for submission. The wire format and registries
-are stabilizing; expect refinement before a 1.0 release. See
-[CHANGELOG.md](CHANGELOG.md) for what has changed.
+**Working draft — pre-1.0.** Label 309 has been accepted into the Cardano CIP
+repository as [CIP-0190](https://github.com/cardano-foundation/CIPs/tree/master/CIP-0190)
+(CIP lifecycle status: Proposed). This repository remains the reference home for
+the standard. The wire format and registries are stabilizing; expect refinement
+before a 1.0 release. See [CHANGELOG.md](CHANGELOG.md) for what has changed.
 
 ## What Label 309 is
 

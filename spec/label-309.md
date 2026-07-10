@@ -23,7 +23,7 @@ A conformant verifier needs only the transaction metadata, optionally the conten
 > [CIP-10 registry](https://github.com/cardano-foundation/CIPs/blob/master/CIP-0010/registry.json)
 > and is the load-bearing on-chain identifier for this specification.
 > Implementations cite this specification by its on-chain metadata label (309);
-> the assigned CIP number (CIP-0190) carries no wire-format consequence.
+> the assigned CIP number ([CIP-0190](https://github.com/cardano-foundation/CIPs/tree/master/CIP-0190)) carries no wire-format consequence.
 
 ## Motivation: Why is this CIP necessary?
 
@@ -1049,7 +1049,7 @@ treat the signature as authoritative).
 
 **Wallet `address` ↔ `cose_key` binding (path 2).** On the wallet path the inner
 `COSE_Sign1` protected header places the wallet's stake address at label
-`"address"` as a 29-byte byte string per [CIP-19](https://cips.cardano.org/cips/cip19/):
+`"address"` as a 29-byte byte string per [CIP-19](https://github.com/cardano-foundation/CIPs/blob/master/CIP-0019/README.md):
 a 1-byte network header (`0xe1` mainnet, `0xe0` testnet) followed by the 28-byte
 `Blake2b-224` hash of the stake verification key. The protected-header
 `address` is **REQUIRED** on path 2: a path-2 signature whose protected header
@@ -4067,9 +4067,11 @@ this CIP proposes the following Acceptance Criteria and Implementation Plan.
 6. **External cryptographic review.** A short external cryptographic review of the
    sealed-PoE construction has been completed; the findings (or an explicit "no
    findings" statement) are published as part of the submission package.
-7. **Public review.** A pull request against `cardano-foundation/CIPs` opens a
-   public discussion; the CIP moves from Proposed to Active when the criteria
-   above are met and the CIP editors approve.
+7. **Public review.** The proposal was submitted to `cardano-foundation/CIPs`,
+   where the public-discussion pull request was opened and merged, accepting it
+   as [CIP-0190](https://github.com/cardano-foundation/CIPs/tree/master/CIP-0190);
+   the CIP moves from Proposed to Active when the criteria above are met and the
+   CIP editors approve.
 
 ### Implementation Plan
 

@@ -3,8 +3,9 @@
 Thank you for your interest in improving Label 309 — an open standard for
 **Proof of Existence (PoE)** anchored on the Cardano blockchain.
 
-Label 309 is a **working draft**, pre-1.0, and is being finalized for submission
-to the formal Cardano CIP process. Contributions at this stage are especially
+Label 309 is a **working draft**, pre-1.0, and has been accepted into the formal
+Cardano CIP process as [CIP-0190](https://github.com/cardano-foundation/CIPs/tree/master/CIP-0190).
+Contributions at this stage are especially
 valuable: they shape a standard before it is frozen. This document explains
 what lives in this repository, how to propose changes to the standard and its
 machine-readable artifacts, and the discipline that keeps every reference
